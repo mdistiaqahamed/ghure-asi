@@ -272,15 +272,14 @@ $('#bq').onclick=e=>{const b=e.target.dataset.b;if(b){$('#bb').value=b;$('#bd').
 /* AI bot */
 const SYS='তুমি বাংলাদেশের ভ্রমণ গাইড। সবসময় সহজ বাংলায় উত্তর দাও, ছোট ও কাজের কথা বলো। খরচ আনুমানিক বলবে, যাওয়ার আগে যাচাই করতে বলবে। বাংলাদেশের ভ্রমণ ছাড়া অন্য বিষয়ে ভদ্রভাবে ফিরিয়ে আনো। মার্কডাউন চিহ্ন (** বা #) ব্যবহার করো না।';
 /* Gemini config: কী বসানোর দুটো উপায়: নিচের GEMINI_KEY তে বসান, অথবা চ্যাটের 🔑 বাটনে দিন */
-const GEMINI_KEY='';
+const GEMINI_KEY='server';
 const GEMINI_MODEL='gemini-flash-lite-latest';
 function getKey(){let k=GEMINI_KEY;try{k=k||localStorage.getItem('gk')||''}catch(e){}return k}
 function setKey(){const k=prompt('আপনার Gemini API key দিন (শুধু এই ব্রাউজারে সেভ থাকবে):');if(k&&k.trim()){try{localStorage.setItem('gk',k.trim())}catch(e){}add('bot','Key সেভ হয়েছে ✓ এবার প্রশ্ন করুন।')}}
-const GEMINI_FALLBACK='gemini-flash-lite-latest';
-async function callGemini(key,bot){
+const GEMINI_FALLBACK='gemini-flash-lite-latest';async function callGemini(key,bot){
 const models=[GEMINI_MODEL,GEMINI_MODEL,GEMINI_FALLBACK];let last={code:'net',message:''};
 for(let i=0;i<models.length;i++){
-try{const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+models[i]+':generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':key},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:hist.map(h=>({role:h.role==='assistant'?'model':'user',parts:[{text:h.content}]})),generationConfig:{temperature:0.7}})});
+try{const res=await fetch('/api/chat?model='+encodeURIComponent(models[i]),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:hist.map(h=>({role:h.role==='assistant'?'model':'user',parts:[{text:h.content}]})),generationConfig:{temperature:0.7}})});
 const data=await res.json().catch(()=>({}));
 if(res.ok)return data;
 last={code:res.status,message:(data.error&&data.error.message)||''};
