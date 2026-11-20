@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ঘুরে আসি — বাংলাদেশ ট্রাভেল গাইড ও ট্রিপ প্ল্যানার</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4faf7;--surface:#fff;--ink:#12302a;--mute:#5c7770;--brand:#0f9d73;--brand2:#0b6e8a;--accent:#ff8a3d;--line:#dcebe5;--shadow:0 10px 30px rgba(15,80,60,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0b1714;--surface:#13261f;--ink:#e6f4ee;--mute:#93b0a6;--line:#23403a;--shadow:0 10px 30px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0b1714;--surface:#13261f;--ink:#e6f4ee;--mute:#93b0a6;--line:#23403a;--shadow:0 10px 30px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hind Siliguri',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:10px 5%;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:20px;color:var(--brand)}
+nav a{color:var(--ink);text-decoration:none;margin-left:18px;font-weight:500;font-size:15px}
+nav a:hover{color:var(--brand)}
+.hero{position:relative;padding:80px 5% 120px;text-align:center;color:#fff;background:linear-gradient(135deg,#0b6e8a,#0f9d73,#6ac47c);background-size:200% 200%;animation:bg 14s ease infinite;overflow:hidden}
+@keyframes bg{50%{background-position:100% 50%}}
+.blob{position:absolute;border-radius:50%;background:rgba(255,255,255,.12);animation:float 9s ease-in-out infinite}
+.b1{width:220px;height:220px;left:-60px;top:40px}.b2{width:140px;height:140px;right:8%;top:60px;animation-delay:-3s}.b3{width:90px;height:90px;left:20%;bottom:60px;animation-delay:-6s}
+@keyframes float{50%{transform:translateY(-26px) scale(1.06)}}
+.hero h1{font-size:clamp(32px,6vw,58px);margin:0 0 12px;line-height:1.2;position:relative}
+.hero p{font-size:clamp(16px,2.2vw,20px);max-width:620px;margin:0 auto 26px;opacity:.95;position:relative}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:600;padding:12px 26px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;transition:.25s;box-shadow:0 8px 20px rgba(255,138,61,.35)}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.btn.ghost{background:transparent;border:2px solid #fff;box-shadow:none;margin-left:8px}
+.plane{position:absolute;top:30px;font-size:34px;animation:fly 14s linear infinite}
+@keyframes fly{from{left:-60px;transform:translateY(0) rotate(8deg)}50%{transform:translateY(40px) rotate(0)}to{left:105%;transform:translateY(0) rotate(8deg)}}
+.wave{position:absolute;bottom:-1px;left:0;width:100%;height:70px;display:block}
+.stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:34px;position:relative}
+.stats b{display:block;font-size:26px}
+section{padding:64px 5%;max-width:1150px;margin:0 auto}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 26px}
+.reveal{opacity:0;transform:translateY(28px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:7px 16px;border-radius:999px;cursor:pointer;font:inherit;transition:.2s}
+.chip.on,.chip:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--surface);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:.3s;border:1px solid var(--line)}
+.card:hover{transform:translateY(-8px) rotate(-.4deg)}
+.cimg{height:130px;display:flex;align-items:center;justify-content:center;font-size:56px;transition:.4s}
+.card:hover .cimg{font-size:68px}
+.cbody{padding:14px 16px 18px}.cbody h3{margin:0 0 4px}.cbody p{margin:0;color:var(--mute);font-size:14px}
+.tag{display:inline-block;font-size:12px;background:color-mix(in srgb,var(--brand) 14%,transparent);color:var(--brand);padding:2px 10px;border-radius:99px;margin-top:8px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:var(--shadow)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+label{font-size:14px;color:var(--mute);display:block;margin-bottom:4px}
+select,input[type=number]{width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.out{margin-top:22px;display:grid;gap:12px}
+.day{display:flex;gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px;animation:pop .5s both}
+@keyframes pop{from{opacity:0;transform:translateX(-18px)}}
+.dn{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;display:grid;place-items:center;font-weight:700}
+.day b{display:block}.day span{color:var(--mute);font-size:14px}
+.pro{position:relative;margin-top:6px}
+.lock{filter:blur(6px);pointer-events:none;user-select:none}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:10px}
+.badge{background:linear-gradient(135deg,#ffb347,#ff7a1a);color:#fff;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px}
+.row{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px dashed var(--line)}
+.total{font-weight:700;font-size:20px;color:var(--brand)}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.plan{background:var(--surface);border:2px solid var(--line);border-radius:22px;padding:26px;transition:.3s}
+.plan:hover{transform:translateY(-6px)}
+.plan.p{border-color:var(--accent)}
+.plan h3{margin:0}.price{font-size:34px;font-weight:700;margin:6px 0}.price small{font-size:14px;color:var(--mute);font-weight:400}
+.plan ul{padding:0;list-style:none;margin:14px 0}.plan li{padding:5px 0}.plan li::before{content:"✓ ";color:var(--brand);font-weight:700}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:80;padding:16px}
+.modal.open{display:flex}
+.mbox{background:var(--surface);border-radius:24px;max-width:520px;width:100%;max-height:88vh;overflow:auto;animation:zoom .35s}
+@keyframes zoom{from{opacity:0;transform:scale(.85)}}
+.mhead{padding:26px;text-align:center;font-size:64px}.mcont{padding:0 24px 24px}
+.x{float:right;margin:12px;border:0;background:rgba(0,0,0,.25);color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:18px}
+footer{text-align:center;color:var(--mute);padding:30px 5% 100px;border-top:1px solid var(--line)}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:62px;height:62px;border-radius:50%;border:0;cursor:pointer;font-size:28px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 10px 28px rgba(11,110,138,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(15,157,115,.5)}100%{box-shadow:0 0 0 22px rgba(15,157,115,0)}}
+.chat{position:fixed;right:18px;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:75;width:min(370px,calc(100vw - 36px));height:min(520px,70vh);background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden}
+.chat.open{display:flex;animation:zoom .3s}
+.ch{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;padding:14px 16px;font-weight:600;display:flex;justify-content:space-between}
+.ch small{font-weight:400;display:block;opacity:.85}
+.msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:85%;padding:9px 13px;border-radius:16px;white-space:pre-wrap;font-size:15px;animation:pop .3s}
+.m.bot{background:var(--bg);border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+.m.me{background:var(--brand);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.sug{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 8px}.sug button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:4px 10px;cursor:pointer}
+.cin{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
+.cin input{flex:1;padding:10px 12px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;min-width:0}
+.cin button{border:0;background:var(--brand);color:#fff;border-radius:99px;padding:0 16px;cursor:pointer;font:inherit}
+.dots span{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:var(--mute);animation:bl 1s infinite}.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
+@keyframes bl{50%{transform:translateY(-6px)}}
+.mapwrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}@media (max-width:760px){.mapwrap{grid-template-columns:1fr}}
+#bdmap{width:100%;max-height:520px}.land{fill:color-mix(in srgb,var(--brand) 18%,var(--surface));stroke:var(--brand);stroke-width:2;stroke-linejoin:round}
+.pin{cursor:pointer}.pin circle.c{fill:var(--accent);stroke:#fff;stroke-width:2;transition:.2s}.pin:hover circle.c,.pin.on circle.c{r:9;fill:var(--brand2)}.pin .pl{fill:var(--accent);opacity:.5;animation:ring 2s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes ring{from{transform:scale(.6);opacity:.7}to{transform:scale(2.4);opacity:0}}
+.pin text,.dh text{fill:var(--ink);font-size:13px;font-weight:600;font-family:inherit}.rt{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-dasharray:6 6;animation:dash 1s linear infinite}@keyframes dash{to{stroke-dashoffset:-12}}
+.btn.sm{padding:8px 16px;font-size:14px;margin:4px 6px 0 0;text-decoration:none}.btn.g{background:var(--brand2);box-shadow:0 8px 20px rgba(11,110,138,.3)}
+.fit{display:grid;gap:10px;margin-top:18px}.fi{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:12px 14px;animation:pop .5s both}.fi .top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.bar{height:8px;background:var(--line);border-radius:99px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:99px;transition:width .8s}
+.ok{color:var(--brand);font-weight:600}
+.pin .pl{animation:none;opacity:0}.pin.on .pl{animation:ring 2s infinite}.pin text{display:none;paint-order:stroke;stroke:var(--surface);stroke-width:4px}.pin.on text,.pin:hover text{display:block}.no{color:#d9534f;font-weight:600}.tips{margin:18px 0 0;padding-left:20px}.tips li{margin:4px 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media (max-width:640px){nav a.h{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="logo">🧭 ঘুরে আসি</div><div><a class="h" href="#places">গন্তব্য</a><a class="h" href="#map">ম্যাপ</a><a class="h" href="#plan">ট্রিপ প্ল্যানার</a><a class="h" href="#budget">বাজেট ট্যুর</a><a class="h" href="#pricing">প্ল্যান</a><a href="#" id="theme">🌓</a></div></nav>
+
+<header class="hero">
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="plane">✈️</div>
+<h1>বাংলাদেশের সেরা জায়গাগুলো<br>নিজের মতো করে ঘুরুন</h1>
+<p>গন্তব্যের তথ্য, সহজ ট্রিপ প্ল্যান আর ফ্রি AI গাইড, সবই এক জায়গায়।</p>
+<a class="btn" href="#plan">ট্রিপ প্ল্যান করুন</a><a class="btn ghost" href="#places">গন্তব্য দেখুন</a>
+<div class="stats"><div><b>৩০+</b>গন্তব্য</div><div><b>ফ্রি</b>AI গাইড</div><div><b>১–৭</b>দিনের প্ল্যান</div></div>
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="var(--bg)" d="M0 40c240 40 480 40 720 10s480-30 720 10V70H0z"/></svg>
+</header>
+
+<section id="places" class="reveal">
+<h2>কোথায় যাবেন?</h2><p class="sub">যেকোনো কার্ডে ক্লিক করে বিস্তারিত দেখুন।</p>
+<div class="chips" id="chips"></div><div class="grid" id="grid"></div>
+</section>
+
+<section id="plan" class="reveal">
+<h2>ট্রিপ প্ল্যানার</h2><p class="sub">গন্তব্য আর দিন বেছে নিন, বাজেট ও হোটেলসহ সব ফ্রি।</p>
+<div class="panel">
+<div class="form">
+<div><label>গন্তব্য</label><select id="pd"></select></div>
+<div><label>কত দিন</label><input type="number" id="pdays" min="1" max="7" value="3"></div>
+<div><label>কতজন</label><input type="number" id="ppl" min="1" max="20" value="2"></div>
+<div><label>ধরন</label><select id="pst"><option value="b">সাশ্রয়ী</option><option value="m" selected>মাঝারি</option><option value="p">আরামদায়ক</option></select></div>
+</div>
+<div style="margin-top:16px"><button class="btn" id="go">প্ল্যান বানান ✨</button></div>
+<div class="out" id="out"></div>
+<div class="pro" id="pro" style="display:none"></div>
+</div>
+</section>
+
+<section id="map" class="reveal">
+<h2>ম্যাপে দেখুন</h2><p class="sub">পিনে ক্লিক করলে ঢাকা থেকে রুট দেখা যাবে, আর এক ক্লিকে Google Maps খুলবে।</p>
+<div class="mapwrap"><div class="panel"><svg id="bdmap" viewBox="0 0 400 480" role="img" aria-label="বাংলাদেশের ম্যাপ"></svg></div><div class="panel" id="minfo"><p>একটি পিন বেছে নিন 👈</p></div></div>
+</section>
+
+<section id="budget" class="reveal">
+<h2>বাজেট ট্যুর প্ল্যান</h2><p class="sub">আপনার বাজেটে কোথায় কত দিন ঘোরা যাবে, দেখে নিন।</p>
+<div class="panel">
+<div class="form">
+<div><label>জনপ্রতি বাজেট (৳)</label><input type="number" id="bb" min="1000" step="500" value="8000"></div>
+<div><label>কত দিন</label><input type="number" id="bd" min="1" max="7" value="3"></div>
+<div><label>কতজন</label><input type="number" id="bp" min="1" max="20" value="2"></div>
+</div>
+<div class="chips" style="margin:14px 0 0" id="bq"><button class="chip" data-b="500" data-d="1">৫০০৳ · ১ দিন</button><button class="chip" data-b="1000" data-d="1">১,০০০৳ · ১ দিন</button><button class="chip" data-b="2000" data-d="2">২,০০০৳ · ২ দিন</button><button class="chip" data-b="5000" data-d="3">৫,০০০৳ · ৩ দিন</button><button class="chip" data-b="10000" data-d="4">১০,০০০৳ · ৪ দিন</button></div>
+<div style="margin-top:16px"><button class="btn" id="bgo">বাজেট দেখুন 💸</button></div>
+<div class="fit" id="fit"></div>
+<ul class="tips"><li>অফ-সিজনে (বর্ষা বা সপ্তাহের মাঝামাঝি) গেলে হোটেল ভাড়া অনেক কম পড়ে।</li><li>সপ্তাহের মাঝখানে বা ভোরের বাস ধরলে ভাড়া ও ভিড় দুটোই কমে।</li><li>শেয়ারে রুম নিলে জনপ্রতি খরচ কমে।</li><li>স্থানীয় হোটেলে খেলে খাবারের খরচ প্রায় অর্ধেক হয়।</li><li>গ্রুপে নৌকা বা সিএনজি ভাড়া করলে ভাগ হয়ে যায়।</li></ul>
+</div>
+</section>
+
+<section id="pricing" class="reveal">
+<h2>প্ল্যান</h2><p class="sub">এখন সব ফিচার সম্পূর্ণ ফ্রি।</p>
+<div class="plans">
+<div class="plan"><h3>ফ্রি</h3><div class="price">৳০<small> / সবসময়</small></div><ul><li>সারা বাংলাদেশের ৩০+ গন্তব্য ও ম্যাপ</li><li>ট্রিপ প্ল্যান ও বাজেট হিসাব</li><li>কম বাজেটের ট্যুর (৫০০৳ থেকে)</li><li>হোটেল ও রুটের তথ্য, Google Maps লিংক</li><li>ফ্রি AI ট্রাভেল গাইড</li></ul></div>
+<div class="plan p"><span class="badge">শীঘ্রই আসছে</span><h3>প্রো</h3><div class="price">—</div><ul><li>অফলাইন গাইড (PDF)</li><li>ট্রিপ সেভ করে রাখা</li><li>আরও বিস্তারিত গাইড</li></ul></div>
+</div>
+</section>
+
+<footer>© ঘুরে আসি। খরচ ও তথ্য আনুমানিক, যাওয়ার আগে যাচাই করে নিন।</footer>
+
+<div class="modal" id="modal"><div class="mbox" id="mbox"></div></div>
+<button class="fab" id="fab" aria-label="AI গাইড">🤖</button>
+<div class="chat" id="chat">
+<div class="ch"><div>AI ট্রাভেল গাইড<small>ফ্রি, প্রশ্ন করুন বাংলায়</small></div><span><span id="ck" title="API key" style="cursor:pointer;margin-right:12px">🔑</span><span id="cx" style="cursor:pointer">✕</span></span></div>
+<div class="msgs" id="msgs"><div class="m bot">হ্যালো! আমি আপনার ট্রাভেল গাইড। কোথায় যেতে চান, কত দিন, বাজেট কত? বললে আমি সাজিয়ে দেব। 😊</div></div>
+<div class="sug" id="sug"><button>৩ দিনে সিলেট</button><button>বর্ষায় কোথায় যাব?</button><button>পরিবার নিয়ে কম খরচে কোথায়?</button></div>
+<div class="cin"><input id="ci" placeholder="আপনার প্রশ্ন লিখুন..."><button id="cs">পাঠান</button></div>
+</div>
+
+<script>
+const D=[
+{id:'cox',n:'কক্সবাজার',e:'🏖️',g:['#4facfe','#00c6a7'],t:'সমুদ্র',best:'নভেম্বর–মার্চ',from:'ঢাকা থেকে বাসে ১০–১২ ঘণ্টা, বিমানে ১ ঘণ্টা ১০ মিনিট',spots:['লাবণী ও সুগন্ধা সৈকত','হিমছড়ি','ইনানী সৈকত','মেরিন ড্রাইভ','মহেশখালী'],c:{b:1800,m:3500,p:7000},f:{b:1800,m:3500,p:6500},h:['হোটেল সী প্যালেস','লং বিচ হোটেল','রয়্যাল টিউলিপ'],tip:'সূর্যাস্তের সময় ইনানী সৈকতে যান।'},
+{id:'sun',n:'সুন্দরবন',e:'🐅',g:['#134e4a','#43a047'],t:'বন',best:'নভেম্বর–ফেব্রুয়ারি',from:'ঢাকা থেকে খুলনা, সেখান থেকে লঞ্চ ট্যুর',spots:['করমজল','হারবাড়িয়া','কটকা','দুবলার চর'],c:{b:2500,m:4500,p:8000},f:{b:1500,m:2800,p:6000},h:['খুলনা শহরের হোটেল','লঞ্চে থাকা প্যাকেজ','ট্যুর অপারেটর রিসোর্ট'],tip:'অনুমতি ও গাইড ছাড়া বনে নামবেন না।'},
+{id:'syl',n:'সিলেট',e:'🍃',g:['#1b5e20','#7cb342'],t:'পাহাড় ও চা-বাগান',best:'জুন–অক্টোবর ও শীতকাল',from:'ঢাকা থেকে ট্রেনে ৭–৮ ঘণ্টা, বাসে ৬–৭ ঘণ্টা',spots:['জাফলং','রাতারগুল জলাবন','লালাখাল','বিছানাকান্দি','জাফলং চা-বাগান','মাধবকুণ্ড'],c:{b:1500,m:3000,p:6000},f:{b:900,m:1500,p:4000},h:['হোটেল ডায়মন্ড ভিউ','রোজ ভিউ','গ্র্যান্ড সিলেট'],tip:'রাতারগুলে নৌকা ভাড়ার আগে দর ঠিক করে নিন।'},
+{id:'stm',n:'সেন্ট মার্টিন',e:'🐢',g:['#0288d1','#26c6da'],t:'দ্বীপ',best:'নভেম্বর–ফেব্রুয়ারি',from:'কক্সবাজার বা টেকনাফ থেকে জাহাজ',spots:['ছেঁড়া দ্বীপ','দক্ষিণ সৈকত','প্রবাল তীর','সূর্যাস্ত পয়েন্ট'],c:{b:2200,m:4500,p:8500},f:{b:3000,m:4200,p:7500},h:['বিচ রিসোর্ট','কটেজ','নীল দিগন্ত'],tip:'প্রবাল ও প্লাস্টিক নিয়ে সচেতন থাকুন, আগে জাহাজের সময়সূচি যাচাই করুন।'},
+{id:'ban',n:'বান্দরবান',e:'⛰️',g:['#5d4037','#8bc34a'],t:'পাহাড়',best:'অক্টোবর–মার্চ',from:'ঢাকা থেকে বাসে ৯–১০ ঘণ্টা',spots:['নীলগিরি','নীলাচল','নাফাখুম','বগালেক','স্বর্ণমন্দির','চিম্বুক'],c:{b:1800,m:3500,p:6500},f:{b:1800,m:3200,p:6000},h:['হিল ভিউ রিসোর্ট','মেঘলা','রাজকুঞ্জ'],tip:'দুর্গম জায়গায় স্থানীয় গাইড নিন।'},
+{id:'ran',n:'রাঙামাটি',e:'🚤',g:['#0277bd','#66bb6a'],t:'লেক',best:'সারা বছর, শীতে সেরা',from:'ঢাকা থেকে বাসে ৮–৯ ঘণ্টা',spots:['কাপ্তাই লেক','ঝুলন্ত সেতু','শুভলং ঝরনা','পেদা টিংটিং'],c:{b:1600,m:3200,p:6000},f:{b:1000,m:1800,p:4500},h:['পর্যটন মোটেল','সুখ নিবাস','লেক ভিউ'],tip:'লেকের নৌকা সকালে নিলে ভিড় কম।'},
+{id:'kua',n:'কুয়াকাটা',e:'🌅',g:['#ff7043','#ffb74d'],t:'সমুদ্র',best:'অক্টোবর–মার্চ',from:'ঢাকা থেকে লঞ্চে বা বাসে ৮–১০ ঘণ্টা',spots:['সৈকত','সীমা বৌদ্ধ বিহার','ফাতরার বন','শুঁটকি পল্লী'],c:{b:1500,m:3000,p:5500},f:{b:1300,m:2200,p:5000},h:['সী ভিউ','হোটেল নীল দিগন্ত','কুয়াকাটা রিসোর্ট'],tip:'একই সৈকত থেকে সূর্যোদয় ও সূর্যাস্ত দুটোই দেখা যায়।'}
+];
+D.forEach(d=>{if(d.t==='পাহাড় ও চা-বাগান')d.t='প্রকৃতি';if(d.t==='দ্বীপ')d.t='সমুদ্র';if(d.t==='লেক')d.t='নদী ও লেক'});
+const GR={'ঐতিহ্য':['#8d6e63','#ffb74d'],'বন':['#134e4a','#43a047'],'পাহাড়':['#5d4037','#8bc34a'],'নদী ও লেক':['#0277bd','#66bb6a'],'প্রকৃতি':['#1b5e20','#7cb342'],'সমুদ্র':['#4facfe','#00c6a7']};
+D.forEach(d=>d.g=GR[d.t]||d.g);
+[
+['dhk','পুরান ঢাকা ও ঐতিহ্য','🕌','ঐতিহ্য','নভেম্বর–ফেব্রুয়ারি','ঢাকার ভেতরেই, বাস বা রিকশায়','লালবাগ কেল্লা|আহসান মঞ্জিল|সদরঘাট|তারা মসজিদ|শাঁখারীবাজার',250,50,[90.40,23.72],'হেঁটে ঘুরলে খরচ সবচেয়ে কম, পুরান ঢাকার খাবারও চেখে দেখুন।','থাকার দরকার নেই, একদিনেই ঘুরে আসুন'],
+['sng','সোনারগাঁও ও পানাম নগর','🏛️','ঐতিহ্য','নভেম্বর–মার্চ','ঢাকা থেকে বাসে ১–২ ঘণ্টা','পানাম নগর|লোকশিল্প জাদুঘর|গোয়ালদী মসজিদ',300,150,[90.60,23.65],'ছুটির দিন এড়ালে ভিড় কম পাবেন।','থাকার দরকার নেই, একদিনেই ঘুরে আসুন'],
+['sav','সাভার','🕊️','ঐতিহ্য','সারা বছর','ঢাকা থেকে বাসে ১ ঘণ্টা','জাতীয় স্মৃতিসৌধ|ধামরাই রথ|আরিচা ঘাট',250,80,[90.26,23.85],'সকালে গেলে স্মৃতিসৌধ চত্বর শান্ত থাকে।','থাকার দরকার নেই, একদিনেই ঘুরে আসুন'],
+['gaz','ভাওয়াল জাতীয় উদ্যান','🌳','বন','অক্টোবর–মার্চ','ঢাকা থেকে বাসে ১.৫ ঘণ্টা','ভাওয়াল উদ্যান|বঙ্গবন্ধু সাফারি পার্ক|শালবন',300,120,[90.35,24.03],'পানির বোতল ও হালকা খাবার সঙ্গে রাখুন।','থাকার দরকার নেই, একদিনেই ঘুরে আসুন'],
+['mun','মুন্সীগঞ্জ','🛶','নদী ও লেক','শীতকাল','ঢাকা থেকে বাসে ১–১.৫ ঘণ্টা','ইদ্রাকপুর কেল্লা|পদ্মার ঘাট|বিক্রমপুর',250,100,[90.53,23.55],'ঘাটে স্থানীয় নৌকায় ঘুরলে দর ঠিক করে নিন।','থাকার দরকার নেই, একদিনেই ঘুরে আসুন'],
+['ctg','চট্টগ্রাম শহর','🚢','সমুদ্র','অক্টোবর–মার্চ','ঢাকা থেকে ট্রেনে বা বাসে ৫–৬ ঘণ্টা','পতেঙ্গা সৈকত|ফয়েজ লেক|ডিসি পাহাড়|বাটালি হিল',600,1200,[91.80,22.35],'রাতের ট্রেনে গেলে এক রাতের থাকার খরচ বাঁচে।'],
+['sit','সীতাকুণ্ড','⛰️','পাহাড়','নভেম্বর–ফেব্রুয়ারি','চট্টগ্রাম হয়ে বাসে, ঢাকা থেকে ৫–৬ ঘণ্টা','চন্দ্রনাথ পাহাড়|সহস্রধারা ঝরনা|কুমিরা ঘাট',600,1000,[91.67,22.62],'পাহাড়ে ওঠার জন্য ভালো জুতা পরুন।'],
+['com','কুমিল্লা','🏛️','ঐতিহ্য','নভেম্বর–মার্চ','ঢাকা থেকে বাসে ২–৩ ঘণ্টা','ময়নামতি|শালবন বিহার|কোটবাড়ি|খাদি মার্কেট',400,500,[91.18,23.46],'কুমিল্লার রসমালাই চেখে দেখতে ভুলবেন না।'],
+['kha','খাগড়াছড়ি','⛰️','পাহাড়','অক্টোবর–মার্চ','ঢাকা থেকে বাসে ৭–৮ ঘণ্টা','আলুটিলা গুহা|রিছাং ঝরনা|তৈদুছড়া',1500,1800,[91.98,23.12],'চান্দের গাড়ি ভাড়া করলে গ্রুপে ভাগ করে নিন।'],
+['saj','সাজেক ভ্যালি','☁️','পাহাড়','বর্ষা ও শীত','খাগড়াছড়ি থেকে চান্দের গাড়িতে, ঢাকা থেকে ৯–১০ ঘণ্টা','কংলাক পাহাড়|হেলিপ্যাড|রুইলুই পাড়া',2000,2200,[92.29,23.38],'মেঘের সাগর দেখতে ভোরে উঠে যান।'],
+['mau','শ্রীমঙ্গল ও লাউয়াছড়া','🍵','প্রকৃতি','সারা বছর','ঢাকা থেকে ট্রেনে ৪–৫ ঘণ্টা','লাউয়াছড়া|চা-বাগান|সাত রঙের চা|মাধবপুর লেক',1200,900,[91.73,24.31],'ট্রেনে গেলে ভাড়া কম, আগে টিকিট কেটে নিন।'],
+['tan','টাঙ্গুয়ার হাওর','🛶','নদী ও লেক','বর্ষা, জুলাই–অক্টোবর','সুনামগঞ্জ হয়ে নৌকায়, ঢাকা থেকে ৭–৮ ঘণ্টা','টাঙ্গুয়ার হাওর|যাদুকাটা নদী|শিমুল বাগান|নীলাদ্রি লেক',2000,1500,[91.07,25.15],'হাউজবোট ভাড়া দলে ভাগ করলে সাশ্রয় হয়।'],
+['raj','রাজশাহী','🥭','ঐতিহ্য','শীতকাল','ঢাকা থেকে ট্রেনে ৬–৭ ঘণ্টা','পদ্মা গার্ডেন|বরেন্দ্র জাদুঘর|পুঠিয়া মন্দির|বাঘা মসজিদ',500,1100,[88.60,24.37],'রাতের ট্রেনে গেলে থাকার খরচ বাঁচে।'],
+['pah','পাহাড়পুর ও নওগাঁ','🛕','ঐতিহ্য','নভেম্বর–ফেব্রুয়ারি','ঢাকা থেকে বাসে ৬–৭ ঘণ্টা','সোমপুর মহাবিহার|কুসুম্বা মসজিদ|দুবলহাটি',450,1100,[88.97,25.03],'ইউনেস্কো বিশ্বঐতিহ্য স্থান, ভোরে গেলে ভালো আলো পাবেন।'],
+['bog','মহাস্থানগড় (বগুড়া)','🏺','ঐতিহ্য','নভেম্বর–মার্চ','ঢাকা থেকে বাসে ৫–৬ ঘণ্টা','মহাস্থানগড়|বেহুলার বাসর ঘর|গোকুল মেধ',450,900,[89.37,24.96],'বগুড়ার দইও চেখে দেখুন।'],
+['nat','নাটোর','👑','ঐতিহ্য','শীতকাল','ঢাকা থেকে বাসে ৫–৬ ঘণ্টা','উত্তরা গণভবন|নাটোর রাজবাড়ি|লালপুর',400,900,[88.99,24.41],'নাটোরের কাঁচাগোল্লা মজার।'],
+['din','দিনাজপুর','🛕','ঐতিহ্য','নভেম্বর–ফেব্রুয়ারি','ঢাকা থেকে বাসে ৮–৯ ঘণ্টা','কান্তজিউ মন্দির|রামসাগর|নয়াবাদ মসজিদ',450,1100,[88.64,25.63],'রামসাগরে বিকেলে হাঁটতে ভালো লাগবে।'],
+['pan','পঞ্চগড় ও তেঁতুলিয়া','🏔️','প্রকৃতি','শীতকাল','ঢাকা থেকে বাসে ১০–১১ ঘণ্টা','তেঁতুলিয়া জিরো পয়েন্ট|চা-বাগান|কাঞ্চনজঙ্ঘা দর্শন|বাংলাবান্ধা',900,1400,[88.40,26.25],'শীতের পরিষ্কার সকালে কাঞ্চনজঙ্ঘা দেখা যায়।'],
+['bag','বাগেরহাট','🕌','ঐতিহ্য','নভেম্বর–মার্চ','ঢাকা থেকে বাসে ৭–৮ ঘণ্টা','ষাটগম্বুজ মসজিদ|খান জাহান আলীর মাজার|রণবিজয়পুর দিঘি',450,1000,[89.79,22.67],'খুলনা হয়ে সুন্দরবনের সঙ্গে একসাথে ঘুরে নিতে পারেন।'],
+['kus','কুষ্টিয়া','🌉','ঐতিহ্য','শীতকাল','ঢাকা থেকে বাসে ৬ ঘণ্টা','লালন শাহের মাজার|রবীন্দ্র কুঠিবাড়ি|গড়াই সেতু',400,900,[89.12,23.90],'লালন মেলার সময় গেলে অন্যরকম অভিজ্ঞতা।'],
+['bar','বরিশাল','🛶','নদী ও লেক','শীতকাল','ঢাকা থেকে লঞ্চে ৭–৮ ঘণ্টা','দুর্গাসাগর|কীর্তনখোলা নদী|গুঠিয়া মসজিদ|অক্সফোর্ড মিশন',500,1000,[90.37,22.70],'রাতের লঞ্চে গেলে থাকার খরচ বাঁচে।'],
+['mym','ময়মনসিংহ','🌿','ঐতিহ্য','শীতকাল','ঢাকা থেকে বাসে ২–৩ ঘণ্টা','শশী লজ|আলেকজান্ডার ক্যাসেল|ব্রহ্মপুত্র নদ',250,400,[90.40,24.75],'পুরান ময়মনসিংহে হেঁটে ঘুরুন।','থাকার দরকার নেই, একদিনেই ঘুরে আসুন'],
+['net','নেত্রকোনা বিজয়পুর','⛰️','প্রকৃতি','শীতকাল','ঢাকা থেকে বাসে ৫ ঘণ্টা','সাদা মাটির পাহাড়|সোমেশ্বরী নদী|কমলা রাণীর দিঘি',450,700,[90.78,25.15],'সোমেশ্বরীর নীল পানি শীতে সবচেয়ে সুন্দর।'],
+['cht','চাঁদপুর','🐟','নদী ও লেক','বর্ষা ও শীত','ঢাকা থেকে লঞ্চে ৩–৪ ঘণ্টা','মেঘনা-পদ্মা মোহনা|চাঁদপুর বড় স্টেশন|ইলিশ বাজার',450,600,[90.67,23.23],'এখানে ইলিশের স্বাদ আলাদা।']
+].forEach(r=>D.push({id:r[0],n:r[1],e:r[2],t:r[3],best:r[4],from:r[5],spots:r[6].split('|'),c:{b:r[7],m:r[7]*2,p:r[7]*4},f:{b:r[8],m:Math.round(r[8]*1.8),p:Math.round(r[8]*3.5)},h:[r[11]||'স্থানীয় সাশ্রয়ী হোটেল ও গেস্টহাউস'],tip:r[10],ll:r[9],g:GR[r[3]]}));
+const $=s=>document.querySelector(s),bn=n=>Math.round(n).toLocaleString('bn-BD');
+let pro=true,cur=null,flt='সব';
+const tags=['সব','৫০০৳-এর মধ্যে',...new Set(D.map(d=>d.t))];
+$('#chips').innerHTML=tags.map(t=>`<button class="chip ${t==='সব'?'on':''}">${t}</button>`).join('');
+$('#chips').onclick=e=>{if(e.target.className.includes('chip')){flt=e.target.textContent;[...$('#chips').children].forEach(c=>c.classList.toggle('on',c===e.target));draw()}};
+function draw(){$('#grid').innerHTML=D.filter(d=>flt==='সব'||(flt==='৫০০৳-এর মধ্যে'?d.c.b+d.f.b<=500:d.t===flt)).map(d=>`<div class="card" data-id="${d.id}"><div class="cimg" style="background:linear-gradient(135deg,${d.g[0]},${d.g[1]})">${d.e}</div><div class="cbody"><h3>${d.n}</h3><p>সেরা সময়: ${d.best}</p><span class="tag">${d.t}</span><span class="tag" style="margin-left:6px">১ দিন ~৳${bn(d.c.b+d.f.b)}</span></div></div>`).join('')}
+draw();
+$('#grid').onclick=e=>{const c=e.target.closest('.card');if(!c)return;const d=D.find(x=>x.id===c.dataset.id);
+$('#mbox').innerHTML=`<button class="x" onclick="$('#modal').classList.remove('open')">✕</button><div class="mhead" style="background:linear-gradient(135deg,${d.g[0]},${d.g[1]})">${d.e}</div><div class="mcont"><h2>${d.n}</h2><p><b>যাওয়ার উপায়:</b> ${d.from}</p><p><b>সেরা সময়:</b> ${d.best}</p><p><b>দেখার জায়গা:</b></p><ul>${d.spots.map(s=>`<li>${s}</li>`).join('')}</ul><p>💡 ${d.tip}</p><button class="btn sm" onclick="pick('${d.id}')">ট্রিপ প্ল্যান করি</button><a class="btn sm g" target="_blank" rel="noopener" href="${gs(d)}">📍 Google Maps</a></div>`;$('#modal').classList.add('open')};
+$('#modal').onclick=e=>{if(e.target.id==='modal')$('#modal').classList.remove('open')};
+$('#pd').innerHTML=D.map(d=>`<option value="${d.id}">${d.e} ${d.n}</option>`).join('');
+window.pick=id=>{$('#modal').classList.remove('open');$('#pd').value=id;location.hash='plan';setTimeout(plan,400)};
+function plan(){
+const d=D.find(x=>x.id===$('#pd').value),n=Math.min(7,Math.max(1,+$('#pdays').value||1)),p=Math.max(1,+$('#ppl').value||1),s=$('#pst').value;cur={d,n,p,s};
+let h='';for(let i=0;i<n;i++){const a=d.spots[(i*2)%d.spots.length],b=d.spots[(i*2+1)%d.spots.length];
+const txt=n===1?`সকাল সকাল রওনা দিয়ে ${a} ও ${b} দেখুন, সন্ধ্যায় ফিরুন।`:i===0?`পৌঁছান ও বিশ্রাম। বিকেলে ${a} দেখুন।`:i===n-1&&n>1?`সকালে ${a}। দুপুরের পর ফেরার প্রস্তুতি।`:`সকালে ${a}, বিকেলে ${b}।`;
+h+=`<div class="day" style="animation-delay:${i*.1}s"><div class="dn">${i+1}</div><div><b>দিন ${i+1}</b><span>${txt}</span></div></div>`}
+$('#out').innerHTML=h+`<div class="day"><div class="dn">💡</div><div><b>টিপস</b><span>${d.tip} যাওয়ার উপায়: ${d.from}।</span></div></div>`;
+renderPro()}
+function renderPro(){if(!cur)return;const{d,n,p,s}=cur,stay=d.c[s]*n*p,fare=d.f[s]*p,tot=stay+fare;
+const body=`<div class="panel" style="margin-top:6px"><h3>💰 বাজেট ও থাকার ব্যবস্থা</h3>
+<div class="row"><span>থাকা, খাওয়া ও স্থানীয় যাতায়াত (${n} দিন, ${p} জন)</span><b>৳${bn(stay)}</b></div><div class="row"><span>ঢাকা থেকে আসা-যাওয়া (আনুমানিক)</span><b>৳${bn(fare)}</b></div><div class="row"><span class="total">মোট আনুমানিক</span><span class="total">৳${bn(tot)}</span></div>
+<p><b>হোটেল:</b> ${d.h.join(', ')}</p><p><b>কাস্টম রুট:</b> ${d.spots.slice(0,4).join(' → ')}</p><a class="btn sm g" target="_blank" rel="noopener" href="${gr(d)}">🗺️ Google Maps-এ রুট খুলুন</a></div>`;
+const el=$('#pro');el.style.display='block';
+el.innerHTML=pro?body:`<div class="lock">${body}</div><div class="ov"><span class="badge">PRO</span><b>বাজেট, হোটেল ও রুট দেখতে প্রো লাগবে</b><button class="btn" onclick="unlock()">প্রো ডেমো চালু করুন</button></div>`}
+window.unlock=()=>{pro=true;renderPro();$('#demo').textContent='ডেমো চালু ✓'};
+
+$('#go').onclick=plan;
+$('#theme').onclick=e=>{e.preventDefault();const r=document.documentElement,dk=matchMedia('(prefers-color-scheme:dark)').matches,now=r.dataset.theme||(dk?'dark':'light');r.dataset.theme=now==='dark'?'light':'dark'};
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.1});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+/* Map + budget */
+const Q=s=>encodeURIComponent(s+', Bangladesh');
+function gs(d){return 'https://www.google.com/maps/search/?api=1&query='+Q(d.n)}
+function gd(d){return 'https://www.google.com/maps/dir/?api=1&origin=Dhaka%2C+Bangladesh&destination='+Q(d.n)+'&travelmode=driving'}
+function gr(d){const s=d.spots.slice(0,4).map(x=>x+', '+d.n);return 'https://www.google.com/maps/dir/?api=1&origin='+Q(s[0])+'&destination='+Q(s[s.length-1])+(s.length>2?'&waypoints='+s.slice(1,-1).map(x=>Q(x)).join('%7C'):'')+'&travelmode=driving'}
+const LL0={cox:[91.98,21.45],sun:[89.2,22.2],syl:[91.87,24.9],stm:[92.32,20.63],ban:[92.22,22.19],ran:[92.18,22.65],kua:[90.12,21.82]},DH=[90.41,23.81];
+const LL=Object.fromEntries(D.map(d=>[d.id,d.ll||LL0[d.id]]));
+const OUT=[[88.1,26.1],[88.7,26.45],[89.0,26.25],[89.8,26.0],[89.8,25.3],[90.4,25.2],[91.2,25.2],[91.9,25.15],[92.3,24.9],[92.0,24.4],[91.6,24.1],[91.8,23.5],[91.4,23.1],[91.7,22.5],[92.0,21.9],[92.3,21.2],[92.1,20.7],[91.9,20.9],[91.6,21.5],[91.3,22.3],[90.7,22.0],[90.5,22.1],[89.8,21.8],[89.1,21.8],[89.0,22.3],[88.7,22.3],[88.9,23.3],[88.6,23.9],[88.3,24.5],[88.1,25.0],[88.5,25.4],[88.0,25.8]];
+const P=([lo,la])=>[(lo-88)/4.7*360+20,(26.7-la)/6.2*450+15];
+const land='M'+OUT.map(o=>P(o).map(v=>v.toFixed(1)).join(',')).join('L')+'Z';
+let pins=D.map(d=>{const[x,y]=P(LL[d.id]);return `<g class="pin" data-id="${d.id}"><circle class="pl" cx="${x}" cy="${y}" r="6"/><circle class="c" cx="${x}" cy="${y}" r="5"><title>${d.n}</title></circle><text x="${x>250?x-12:x+12}" text-anchor="${x>250?'end':'start'}" y="${y+4}">${d.n}</text></g>`}).join('');
+const[dx,dy]=P(DH);
+$('#bdmap').innerHTML=`<path class="land" d="${land}"/><path id="rt" class="rt" d=""/>${pins}<g class="dh"><rect x="${dx-6}" y="${dy-6}" width="12" height="12" rx="3" fill="var(--brand2)" stroke="#fff" stroke-width="2"/><text x="${dx+12}" y="${dy+4}">ঢাকা</text></g>`;
+function selPin(id){const d=D.find(x=>x.id===id),[x,y]=P(LL[id]);
+document.querySelectorAll('.pin').forEach(p=>p.classList.toggle('on',p.dataset.id===id));
+$('#rt').setAttribute('d',`M${dx},${dy}Q${(dx+x)/2+30},${(dy+y)/2-30} ${x},${y}`);
+$('#minfo').innerHTML=`<h3 style="margin:0">${d.e} ${d.n}</h3><p style="color:var(--mute)">${d.from}</p><p><b>সেরা সময়:</b> ${d.best}</p><p><b>দেখার জায়গা:</b> ${d.spots.join(', ')}</p><a class="btn sm g" target="_blank" rel="noopener" href="${gs(d)}">📍 Google Maps-এ খুলুন</a><a class="btn sm" target="_blank" rel="noopener" href="${gd(d)}">🚗 ঢাকা থেকে রুট</a><button class="btn sm" onclick="pick('${d.id}')">ট্রিপ প্ল্যান</button>`}
+$('#bdmap').onclick=e=>{const p=e.target.closest('.pin');if(p)selPin(p.dataset.id)};
+function budget(){const B=Math.max(1000,+$('#bb').value||0),n=Math.min(7,Math.max(1,+$('#bd').value||1)),p=Math.max(1,+$('#bp').value||1);
+const L=D.map(d=>{const cost=d.c.b*n+d.f.b,max=Math.floor((B-d.f.b)/d.c.b);return{d,cost,max,ok:cost<=B}}).sort((a,b)=>a.cost-b.cost);
+const okL=L.filter(r=>r.ok),nL=L.filter(r=>!r.ok).slice(0,2);$('#fit').innerHTML=(okL.length?`<b>${bn(okL.length)}টি জায়গা আপনার বাজেটে হবে</b>`:'<b>এই বাজেটে এত দিনে কোনো জায়গা হচ্ছে না, দিন কমান বা বাজেট বাড়ান</b>')+[...okL,...nL].map((r,i)=>`<div class="fi" style="animation-delay:${i*.07}s"><div class="top"><b>${r.d.e} ${r.d.n}</b><span class="${r.ok?'ok':'no'}">${r.ok?'বাজেটে হবে ✓':'বাজেট কম পড়বে'}</span></div><div style="color:var(--mute);font-size:14px">${n} দিনে জনপ্রতি প্রায় ৳${bn(r.cost)}, ${p} জনে ৳${bn(r.cost*p)}${r.max>=1?` · এই বাজেটে সর্বোচ্চ ${bn(Math.min(r.max,30))} দিন`:' · ফেরার ভাড়াই বাজেট ছাড়িয়ে যায়'}</div><div class="bar"><i style="width:${Math.min(100,B/r.cost*100)}%"></i></div>${r.ok?`<button class="btn sm" style="margin-top:8px" onclick="bplan('${r.d.id}',${n},${p})">সাশ্রয়ী প্ল্যান বানান</button>`:''}</div>`).join('')}
+window.bplan=(id,n,p)=>{$('#pd').value=id;$('#pdays').value=n;$('#ppl').value=p;$('#pst').value='b';location.hash='plan';setTimeout(plan,400)};
+$('#bgo').onclick=budget;budget();
+$('#bq').onclick=e=>{const b=e.target.dataset.b;if(b){$('#bb').value=b;$('#bd').value=e.target.dataset.d;budget()}};
+/* AI bot */
+const SYS='তুমি বাংলাদেশের ভ্রমণ গাইড। সবসময় সহজ বাংলায় উত্তর দাও, ছোট ও কাজের কথা বলো। খরচ আনুমানিক বলবে, যাওয়ার আগে যাচাই করতে বলবে। বাংলাদেশের ভ্রমণ ছাড়া অন্য বিষয়ে ভদ্রভাবে ফিরিয়ে আনো। মার্কডাউন চিহ্ন (** বা #) ব্যবহার করো না।';
+/* Gemini config: কী বসানোর দুটো উপায়: নিচের GEMINI_KEY তে বসান, অথবা চ্যাটের 🔑 বাটনে দিন */
+const GEMINI_KEY='';
+const GEMINI_MODEL='gemini-flash-lite-latest';
+function getKey(){let k=GEMINI_KEY;try{k=k||localStorage.getItem('gk')||''}catch(e){}return k}
+function setKey(){const k=prompt('আপনার Gemini API key দিন (শুধু এই ব্রাউজারে সেভ থাকবে):');if(k&&k.trim()){try{localStorage.setItem('gk',k.trim())}catch(e){}add('bot','Key সেভ হয়েছে ✓ এবার প্রশ্ন করুন।')}}
+const GEMINI_FALLBACK='gemini-flash-lite-latest';
+async function callGemini(key,bot){
+const models=[GEMINI_MODEL,GEMINI_MODEL,GEMINI_FALLBACK];let last={code:'net',message:''};
+for(let i=0;i<models.length;i++){
+try{const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+models[i]+':generateContent',{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':key},body:JSON.stringify({systemInstruction:{parts:[{text:SYS}]},contents:hist.map(h=>({role:h.role==='assistant'?'model':'user',parts:[{text:h.content}]})),generationConfig:{temperature:0.7}})});
+const data=await res.json().catch(()=>({}));
+if(res.ok)return data;
+last={code:res.status,message:(data.error&&data.error.message)||''};
+if(![404,429,500,503].includes(res.status))break}
+catch(err){last={code:'net',message:''}}
+if(i<models.length-1){bot.textContent='সার্ভার ব্যস্ত, আবার চেষ্টা করছি...';await new Promise(r=>setTimeout(r,1500))}}
+throw last}
+let hist=[],busy=false;
+$('#fab').onclick=()=>$('#chat').classList.toggle('open');$('#cx').onclick=()=>$('#chat').classList.remove('open');
+function add(c,t){const m=document.createElement('div');m.className='m '+c;m.textContent=t;$('#msgs').appendChild(m);$('#msgs').scrollTop=1e9;return m}
+async function ask(q){if(busy||!q.trim())return;busy=true;$('#sug').style.display='none';add('me',q);hist.push({role:'user',content:q});
+const bot=add('bot','');bot.innerHTML='<span class="dots"><span></span><span></span><span></span></span>';
+try{
+const key=getKey();
+if(!key){hist.pop();bot.textContent='AI চালু করতে আপনার Gemini API key লাগবে। উপরের 🔑 বাটনে চাপ দিয়ে key দিন।';busy=false;return}
+const data=await callGemini(key,bot);
+const parts=data.candidates&&data.candidates[0]&&data.candidates[0].content&&data.candidates[0].content.parts;
+const text=(parts&&parts.map(p=>p.text||'').join('').trim())||'দুঃখিত, উত্তর পাইনি। আবার চেষ্টা করুন।';
+bot.textContent=text;hist.push({role:'assistant',content:text})}
+catch(e){hist.pop();const c=e&&e.code;
+bot.textContent=c===429?'ফ্রি লিমিট শেষ, কিছুক্ষণ পরে আবার চেষ্টা করুন।':(c===400||c===403)?'API key ঠিক নেই বা অনুমতি নেই। 🔑 বাটনে চেপে সঠিক key দিন।':c===404?'মডেলের নাম ঠিক নেই। ফাইলে GEMINI_MODEL বদলে AI Studio-র বর্তমান ফ্রি Flash মডেলের নাম দিন।':'AI এখন কাজ করছে না ('+(c||'নেটওয়ার্ক')+'). '+((e&&e.message)||'')}
+busy=false}
+$('#ck').onclick=setKey;
+$('#cs').onclick=()=>{const v=$('#ci').value;$('#ci').value='';ask(v)};
+$('#ci').onkeydown=e=>{if(e.key==='Enter')$('#cs').click()};
+$('#sug').onclick=e=>{if(e.target.tagName==='BUTTON')ask(e.target.textContent)};
+</script>
+</body>
+</html>
