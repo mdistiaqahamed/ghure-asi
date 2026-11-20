@@ -304,7 +304,7 @@ const parts=data.candidates&&data.candidates[0]&&data.candidates[0].content&&dat
 const text=(parts&&parts.map(p=>p.text||'').join('').trim())||'দুঃখিত, উত্তর পাইনি। আবার চেষ্টা করুন।';
 bot.textContent=text;hist.push({role:'assistant',content:text})}
 catch(e){hist.pop();const c=e&&e.code;
-bot.textContent=c===429?'ফ্রি লিমিট শেষ, কিছুক্ষণ পরে আবার চেষ্টা করুন।':(c===400||c===403)?'API key ঠিক নেই বা অনুমতি নেই। 🔑 বাটনে চেপে সঠিক key দিন।':c===404?'মডেলের নাম ঠিক নেই। ফাইলে GEMINI_MODEL বদলে AI Studio-র বর্তমান ফ্রি Flash মডেলের নাম দিন।':'AI এখন কাজ করছে না ('+(c||'নেটওয়ার্ক')+'). '+((e&&e.message)||'')}
+bot.textContent=c===429?'ফ্রি লিমিট শেষ, কিছুক্ষণ পরে আবার চেষ্টা করুন।':(c===400||c===403||c===404)?'সাময়িক সমস্যা হচ্ছে, কিছুক্ষণ পরে আবার চেষ্টা করুন।':'AI এখন কাজ করছে না ('+(c||'নেটওয়ার্ক')+')। কিছুক্ষণ পরে আবার চেষ্টা করুন।'}
 busy=false}
 $('#ck').onclick=setKey;
 $('#cs').onclick=()=>{const v=$('#ci').value;$('#ci').value='';ask(v)};
