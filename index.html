@@ -311,5 +311,13 @@ $('#cs').onclick=()=>{const v=$('#ci').value;$('#ci').value='';ask(v)};
 $('#ci').onkeydown=e=>{if(e.key==='Enter')$('#cs').click()};
 $('#sug').onclick=e=>{if(e.target.tagName==='BUTTON')ask(e.target.textContent)};
 </script>
+<footer class="credit">
+  ডেভেলপ করেছেন <a href="https://github.com/mdistiaqahamed" target="_blank" rel="noopener">Md. Istiaq Ahamed</a>
+</footer>
+<style>
+.credit{text-align:center;padding:20px 16px 28px;font-size:14px;color:var(--mute)}
+.credit a{color:var(--brand);font-weight:600;text-decoration:none}
+.credit a:hover{text-decoration:underline}
+</style>
 </body>
 </html>
